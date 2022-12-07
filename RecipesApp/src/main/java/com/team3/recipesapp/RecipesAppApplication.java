@@ -22,41 +22,43 @@ public class RecipesAppApplication {
     public static void main(String[] args) {
         SpringApplication.run(RecipesAppApplication.class, args);
 
-        log.info("Loading application properties");
+        connectToDB();
+    }
+
+    private static void connectToDB(){
+        log.info("Loading application properties.");
         Properties properties = new Properties();
         try {
             properties.load(TestUser.class.getClassLoader().getResourceAsStream("application.properties"));
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }finally {
+            log.info("Application Properties loaded successfully.");
         }
 
-        log.info("Connecting to the database");
+        log.info("Connecting to the database.");
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(properties.getProperty("url"), properties);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }finally {
+            log.info("Connection to the Database established successfully.");
         }
 
-        TestUser a = new TestUser(75,"aaznanob","asd321");
-        try {
-            insertData(a,connection);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        log.info("Insertion successful");
+        log.info("Closing connection.");
         try {
             connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }finally {
+            log.info("Connection closed.");
         }
-
     }
 
     private static void insertData(TestUser todo, Connection connection) throws SQLException {
-        log.info("Insert data");
+        log.info("Inserting data into Database.");
         PreparedStatement insertStatement = connection
                 .prepareStatement("INSERT INTO TestUser (UserId, Username, Password) VALUES (?, ?, ?);");
 
