@@ -35,6 +35,7 @@ public class RecipesAppApplication {
     }
 
     public static void main(String[] args) {
+        //connectToDB();
         SpringApplication.run(RecipesAppApplication.class, args);
     }
 
