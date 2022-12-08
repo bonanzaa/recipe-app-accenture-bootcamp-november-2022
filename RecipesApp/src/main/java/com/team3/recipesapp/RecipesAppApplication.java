@@ -1,8 +1,10 @@
 package com.team3.recipesapp;
 
+import com.azure.core.annotation.Post;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.sql.*;
@@ -10,6 +12,7 @@ import java.util.*;
 import java.util.logging.Logger;
 
 @SpringBootApplication
+@RestController
 public class RecipesAppApplication {
 
     private static final Logger log;
@@ -19,10 +22,20 @@ public class RecipesAppApplication {
         log =Logger.getLogger(RecipesAppApplication.class.getName());
     }
 
+    @Autowired
+    private UserRepository repository;
+
+    @PostMapping("/user")
+    public User addUser(@RequestBody User user){
+        return repository.save(user);
+    }
+    @GetMapping("/users")
+    public List<User> getUsers(){
+        return repository.findAll();
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(RecipesAppApplication.class, args);
-
-        connectToDB();
     }
 
     private static void connectToDB(){
