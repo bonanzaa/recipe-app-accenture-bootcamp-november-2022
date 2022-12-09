@@ -109,6 +109,16 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>3.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.azure.resourcemanager</groupId>
+            <artifactId>azure-resourcemanager-appservice</artifactId>
+            <version>2.21.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.azure.resourcemanager</groupId>
+            <artifactId>azure-resourcemanager-sql</artifactId>
+            <version>2.21.0</version>
+        </dependency>
     </dependencies>
 
     <build>

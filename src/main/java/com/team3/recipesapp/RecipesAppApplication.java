@@ -29,16 +29,18 @@ public class RecipesAppApplication {
     private UserRepository repository;
 
     @PostMapping("/user")
+    @Post("https://recipeapp2022.azurewebsites.net/user")
     public User addUser(@RequestBody User user){
         return repository.save(user);
     }
     @GetMapping("/users")
+    @Get("https://recipeapp2022.azurewebsites.net/users")
     public List<User> getUsers(){
         return repository.findAll();
     }
 
     public static void main(String[] args) {
-        //connectToDB();
+        connectToDB();
        SpringApplication.run(RecipesAppApplication.class, args);
     }
 
