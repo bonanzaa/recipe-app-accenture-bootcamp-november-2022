@@ -17,6 +17,17 @@ public class ApplicationSecurityConfig {
         return http.build();
     }
 
+
+
+
+
+
+
+
+
+
+
+
 //    @Bean
 //    public WebSecurityCustomizer webSecurityCustomizer() {
 //        return (web) -> web.ignoring().antMatchers("/ignore1", "/ignore2");
