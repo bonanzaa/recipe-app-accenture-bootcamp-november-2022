@@ -2,12 +2,14 @@ package com.team3.recipesapp;
 
 import com.azure.core.annotation.Post;
 import com.azure.core.annotation.Get;
+import org.hibernate.annotations.Target;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.lang.annotation.ElementType;
 import java.sql.*;
 import java.util.*;
 import java.util.logging.Logger;
@@ -31,7 +33,6 @@ public class RecipesAppApplication {
         return repository.save(user);
     }
     @GetMapping("/users")
-    @Get("/users")
     public List<User> getUsers(){
         return repository.findAll();
     }
