@@ -14,8 +14,8 @@ import java.sql.*;
 import java.util.*;
 import java.util.logging.Logger;
 
-@SpringBootApplication
 @RestController
+@SpringBootApplication
 public class RecipesAppApplication {
 
     private static final Logger log;
@@ -29,12 +29,12 @@ public class RecipesAppApplication {
     private UserRepository repository;
 
     @PostMapping("/user")
-    @Post("https://recipeapp2022.azurewebsites.net/user")
     public User addUser(@RequestBody User user){
         return repository.save(user);
     }
+
+
     @GetMapping("/users")
-    @Get("https://recipeapp2022.azurewebsites.net/users")
     public List<User> getUsers(){
         return repository.findAll();
     }
