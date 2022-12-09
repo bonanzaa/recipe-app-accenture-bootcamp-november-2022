@@ -1,6 +1,7 @@
 package com.team3.recipesapp;
 
 import com.azure.core.annotation.Post;
+import com.azure.core.annotation.Get;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,7 +37,7 @@ public class RecipesAppApplication {
 
     public static void main(String[] args) {
         //connectToDB();
-        SpringApplication.run(RecipesAppApplication.class, args);
+       SpringApplication.run(RecipesAppApplication.class, args);
     }
 
     private static void connectToDB(){
