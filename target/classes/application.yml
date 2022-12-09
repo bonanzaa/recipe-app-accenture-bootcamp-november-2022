@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://mysqlserver120622.database.windows.net:1433;database=RecipeAppDB;user=azureuser@mysqlserver120622;password=!VerySecurePASSWORD120622!;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: azureuser
+    password: "!VerySecurePASSWORD120622!"
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+
+server:
+  port: 9191
+

@@ -1,0 +1,6 @@
+com\team3\recipesapp\RandomIDGenerator.class
+com\team3\recipesapp\RecipesAppApplication.class
+com\team3\recipesapp\User.class
+com\team3\recipesapp\UserRepository.class
+com\team3\recipesapp\TestUser.class
+com\team3\recipesapp\security\ApplicationSecurityConfig.class
