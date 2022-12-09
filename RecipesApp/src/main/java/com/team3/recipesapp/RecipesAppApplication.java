@@ -31,6 +31,7 @@ public class RecipesAppApplication {
         return repository.save(user);
     }
     @GetMapping("/users")
+    @Get("/users")
     public List<User> getUsers(){
         return repository.findAll();
     }
