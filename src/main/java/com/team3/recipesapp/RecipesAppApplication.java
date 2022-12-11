@@ -26,6 +26,8 @@ public class RecipesAppApplication {
         log =Logger.getLogger(RecipesAppApplication.class.getName());
     }
 
+    //test
+
     public static void main(String[] args) {
         connectToDB();
         SpringApplication.run(RecipesAppApplication.class, args);
