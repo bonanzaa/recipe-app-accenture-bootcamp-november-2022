@@ -6,7 +6,7 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String home(){
         return "Hello from our website. This is a functionality test";
     }

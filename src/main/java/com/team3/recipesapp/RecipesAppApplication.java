@@ -37,7 +37,7 @@ public class RecipesAppApplication {
         log.info("Loading application properties.");
         Properties properties = new Properties();
         try {
-            properties.load(TestUser.class.getClassLoader().getResourceAsStream("application.properties"));
+            properties.load(RecipesAppApplication.class.getClassLoader().getResourceAsStream("application.properties"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }finally {
@@ -64,18 +64,6 @@ public class RecipesAppApplication {
             log.info("Connection closed.");
         }
     }
-
-    private static void insertData(TestUser todo, Connection connection) throws SQLException {
-        log.info("Inserting data into Database.");
-        PreparedStatement insertStatement = connection
-                .prepareStatement("INSERT INTO TestUser (UserId, Username, Password) VALUES (?, ?, ?);");
-
-        insertStatement.setInt(1, todo.getID());
-        insertStatement.setString(2, todo.getUsername());
-        insertStatement.setString(3, todo.getPassword());
-        insertStatement.executeUpdate();
-    }
-
 
 
 }
