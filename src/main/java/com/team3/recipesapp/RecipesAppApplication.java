@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.lang.annotation.ElementType;
@@ -23,20 +24,6 @@ public class RecipesAppApplication {
     static {
         System.setProperty("java.util.logging.SimpleFormatter.format", "[%4$-7s] %5$s %n");
         log =Logger.getLogger(RecipesAppApplication.class.getName());
-    }
-
-    @Autowired
-    private UserRepository repository;
-
-    @PostMapping("/user")
-    public User addUser(@RequestBody User user){
-        return repository.save(user);
-    }
-
-
-    @GetMapping("/users")
-    public List<User> getUsers(){
-        return repository.findAll();
     }
 
     public static void main(String[] args) {
