@@ -27,8 +27,8 @@ class RecipesAppApplicationTests {
     private ResultSet resultSet;
 
 
-    @Mock
-    private TestUser user;
+//    @Mock
+//    private TestUser user;
 
     @Test
     public void check_a_user_properties(){
