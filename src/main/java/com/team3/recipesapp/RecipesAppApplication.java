@@ -29,7 +29,7 @@ public class RecipesAppApplication {
     //test
 
     public static void main(String[] args) {
-        connectToDB();
+        //connectToDB();
         SpringApplication.run(RecipesAppApplication.class, args);
     }
 
