@@ -1,4 +1,4 @@
-package com.team3.recipesapp;
+package com.team3.recipesapp.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name="users")
+//@Table(name="users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
