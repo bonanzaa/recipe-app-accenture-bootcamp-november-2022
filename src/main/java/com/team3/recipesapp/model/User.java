@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-//@Table(name="users")
+@Table(name="users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
