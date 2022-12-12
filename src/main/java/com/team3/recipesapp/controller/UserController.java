@@ -17,8 +17,6 @@ public class UserController {
     @Autowired
     private final UserService userService;
 
-    private final UserRepository userRepository;
-
     @GetMapping(value = "/")
     public String home(){
         return "Hello from our website. This is a functionality test";
@@ -41,7 +39,7 @@ public class UserController {
     }
 
     @DeleteMapping("/employees/{id}")
-    void deleteEmployee(@PathVariable String id) {
+    void deleteUser(@PathVariable String id) {
         userService.deleteById(id);
     }
 
