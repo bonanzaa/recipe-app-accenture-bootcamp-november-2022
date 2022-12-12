@@ -1,21 +1,14 @@
 package com.team3.recipesapp;
 
-import com.azure.core.annotation.Post;
-import com.azure.core.annotation.Get;
-import org.hibernate.annotations.Target;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.lang.annotation.ElementType;
 import java.sql.*;
 import java.util.*;
 import java.util.logging.Logger;
 
-@RestController
 @SpringBootApplication
 public class RecipesAppApplication {
 
