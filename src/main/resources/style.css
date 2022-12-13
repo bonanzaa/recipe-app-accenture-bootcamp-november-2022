@@ -1,0 +1,107 @@
+.form-wrap {
+    width:900px;
+    height: 550px;
+    background: #cf4f4f;
+    border-radius: 20px;
+    align:center;
+
+}
+.form-wrap *{transition: .1s linear}
+.profile {
+
+    float: right;
+    text-align: center;
+    margin-right: 60px;
+    margin-top: 70px;
+
+}
+form {
+    background: white;
+    float: left;
+    width: calc(100% - 500px);
+    padding: 20px;
+    margin:45px 20px 0px 10px;
+    border-radius: 0 20px 20px 0;
+    color: #7b7b7b;
+}
+.form-wrap:after, form div:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+form div {
+    margin-bottom: 15px;
+    position: relative;
+}
+h1 {
+    font-size: 32px;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+
+
+}
+
+
+
+label, span {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    color:#0e0e0e;
+
+}
+label1, span {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    text-align:center;
+    color: #d01345;
+
+}
+
+input[type="text"], input[type="username"] {
+    border-width: 0;
+    outline: none;
+    margin: 0;
+    width: 100%;
+    align: center;
+    padding: 10px 15px;
+    background: #e6e6e6;
+}
+input[type="text"]:focus, input[type="username"]:focus {
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+
+
+
+button {
+    padding: 10px 0;
+    border-width: 1px;
+    border-color: #0e0e0e;
+    display: block;
+    width: 120px;
+    margin: 25px auto 0;
+    background: #e79696;
+
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    outline: none;
+    text-transform: uppercase;
+}
+
+
+@media (max-width: 600px) {
+    .form-wrap {margin: 20px auto; max-width: 550px; width:100%;}
+    .profile, form {float: none; width: 100%;}
+    h1 {margin-top: auto; padding-bottom: 50px;}
+    form {border-radius: 0 0 20px 20px;}
+}
+
+
+
+
