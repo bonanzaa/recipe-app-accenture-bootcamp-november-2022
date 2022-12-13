@@ -6,11 +6,12 @@ import com.team3.recipesapp.service.RecipeService;
 import com.team3.recipesapp.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequiredArgsConstructor
 public class RecipeController {
     @Autowired
