@@ -8,7 +8,30 @@
   height: 100%;
   overflow: auto;
 }
+.bg-light {
+  background-color: #74bd98!important;
+}
 
+.h1, h1{
+
+  color: #111111;
+
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.btn-primary {
+
+  background-color: #c56f25;
+  border-color: #3b61d1;
+}
+
+.btn-outline-primary {
+  color: #fff;
+  border-color: #c56f25;
+}
 /* Sidebar links */
 .sidebar a {
   display: block;
