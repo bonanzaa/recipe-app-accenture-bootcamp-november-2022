@@ -23,7 +23,7 @@ public class UserController {
     public void home(){
         //return "Hello from our website. This is a functionality test";
     }
-    
+
     @GetMapping("/users")
     public String getUsers(){
         return "users";

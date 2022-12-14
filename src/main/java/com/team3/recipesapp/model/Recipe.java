@@ -27,6 +27,16 @@ public class Recipe {
     @GeneratedValue(generator="system-uuid")
     @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String id;
+
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
+    }
+
+    private byte[] photo;
     private String title;
     private String instructions;
     private String ingredients;
@@ -82,11 +92,13 @@ public class Recipe {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    public Recipe(String title, String instructions,String ingredients,String tags){
+    public Recipe(String title, String instructions,String ingredients,String tags,byte[] photo){
         this.title = title;
         this.instructions = instructions;
         this.ingredients = ingredients;
         this.tags = tags;
+
+        this.photo = photo;
 
         java.util.Date date = new Date();
         Timestamp param = new java.sql.Timestamp(date.getTime());

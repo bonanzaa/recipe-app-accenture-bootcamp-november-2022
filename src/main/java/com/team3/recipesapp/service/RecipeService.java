@@ -5,7 +5,12 @@ import com.team3.recipesapp.model.User;
 import com.team3.recipesapp.repository.RecipeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Service
@@ -41,6 +46,14 @@ public class RecipeService {
                     newRecipe.setId(id);
                     return recipeRepository.save(newRecipe);
                 });
+    }
+
+    public void saveRecipe(MultipartFile imageFile,String title, String ingredients,String instructions,String tags) throws IOException {
+        byte[] bytes = imageFile.getBytes();
+
+        Recipe newRecipe = new Recipe(title,ingredients,instructions,tags,bytes);
+        recipeRepository.save(newRecipe);
+
     }
 
 }

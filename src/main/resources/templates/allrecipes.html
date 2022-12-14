@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th> Title </th>
+        <th> Ingredients </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${recipes.empty}">
+        <td colspan="2"> No Recipes Available </td>
+    </tr>
+    <tr th:each="recipe : ${recipes}">
+        <td><span th:text="${recipe.title}"> Title </span></td>
+        <td><span th:text="${recipe.ingredients}"> Instructions </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
