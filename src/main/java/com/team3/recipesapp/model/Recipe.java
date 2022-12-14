@@ -10,6 +10,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -22,13 +27,11 @@ public class Recipe {
     @GeneratedValue(generator="system-uuid")
     @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String id;
-
-
     private String title;
     private String instructions;
     private String ingredients;
     private String tags;
-    private String creationTime;
+    private Timestamp creationTime;
     public String getId() {
         return id;
     }
@@ -69,20 +72,25 @@ public class Recipe {
         this.tags = tags;
     }
 
-    public String getCreationTime() {
+    public Timestamp getCreationTime() {
         return creationTime;
     }
 
-    public void setCreationTime(String creationTime) {
+    public void setCreationTime(Timestamp creationTime) {
         this.creationTime = creationTime;
     }
 
-    public Recipe(String title, String instructions,String ingredients,String tags,String creationTime){
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    public Recipe(String title, String instructions,String ingredients,String tags){
         this.title = title;
         this.instructions = instructions;
         this.ingredients = ingredients;
         this.tags = tags;
-        this.creationTime = creationTime;
+
+        java.util.Date date = new Date();
+        Timestamp param = new java.sql.Timestamp(date.getTime());
+        this.creationTime = Timestamp.valueOf(sdf.format(param));
     }
 
     @Override

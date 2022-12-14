@@ -18,13 +18,14 @@ public class RecipeController {
     private final RecipeService recipeService;
 
     @GetMapping("/recipes")
-    public List<Recipe> recipes(){
-        return recipeService.getRecipes();
+    public String recipes(){
+        return "recipes";
     }
 
     @PostMapping("/recipe")
     public Recipe addRecipe(@RequestBody Recipe recipe){
-        return recipeService.saveRecipe(recipe);
+        Recipe newRecipe = new Recipe(recipe.getTitle(),recipe.getInstructions(),recipe.getIngredients(),recipe.getTags());
+        return recipeService.saveRecipe(newRecipe);
     }
 
     @PutMapping("/recipes/{id}")

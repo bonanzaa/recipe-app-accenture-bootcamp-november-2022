@@ -23,15 +23,8 @@ public class UserController {
     public void home(){
         //return "Hello from our website. This is a functionality test";
     }
-
-//    @GetMapping("/users")
-//    @ResponseBody
-//    public List<User> getUsers(){
-//        return userService.getUsers();
-//    }
-
+    
     @GetMapping("/users")
-    @ResponseBody
     public String getUsers(){
         return "users";
     }
