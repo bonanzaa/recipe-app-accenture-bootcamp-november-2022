@@ -19,10 +19,10 @@ public class UserController {
 
     private final UserRepository userRepository;
 
-    @GetMapping(value = "/")
-    public String home(){
-        return "Hello from our website. This is a functionality test";
-    }
+//    @GetMapping(value = "/")
+//    public String home(){
+//        return "Hello from our website. This is a functionality test";
+//    }
 
     @GetMapping("/users")
     public List<User> getUsers(){
