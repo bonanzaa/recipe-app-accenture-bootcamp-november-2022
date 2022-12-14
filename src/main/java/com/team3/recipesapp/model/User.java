@@ -1,5 +1,6 @@
 package com.team3.recipesapp.model;
 
+import com.team3.recipesapp.utility.userRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -22,16 +23,16 @@ public class User {
     @GeneratedValue(generator="system-uuid")
     @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String id;
-    public userRole role;
+    public String role;
     private String username;
     private String email;
     private String password;
 
-    User(String username,String email,String password,userRole role){
+    public User(String username,String email,String password){
         this.username = username;
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.role = userRole.DefaultUser.name();
     }
 
     public String getID(){
@@ -61,18 +62,11 @@ public class User {
     public void setPassword(String password){
         this.password = password;
     }
-    public userRole getRole(){
-        return this.role;
+    public String getRole(){
+        return this.role.toString();
     }
     public void setRole(userRole newRole){
-        this.role = newRole;
-    }
-
-    public enum userRole{
-        Unauthorized,
-        DefaultUser,
-        Moderator,
-        Admin
+        this.role = newRole.name();
     }
 
     @Override

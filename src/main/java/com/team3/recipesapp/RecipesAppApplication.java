@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 @SpringBootApplication
@@ -20,10 +21,15 @@ public class RecipesAppApplication {
         log =Logger.getLogger(RecipesAppApplication.class.getName());
     }
 
-    //test
-
     public static void main(String[] args) {
-        //connectToDB();
+        connectToDB();
+        log.info("Starting timeout before running the app.");
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        log.info("Timeout over. Starting the application.");
         SpringApplication.run(RecipesAppApplication.class, args);
     }
 
@@ -57,6 +63,8 @@ public class RecipesAppApplication {
         }finally {
             log.info("Connection closed.");
         }
+
+        log.info("Database woken up.");
     }
 
 

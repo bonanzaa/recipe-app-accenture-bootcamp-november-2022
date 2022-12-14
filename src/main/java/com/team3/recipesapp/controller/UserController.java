@@ -10,28 +10,29 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-@RestController
+import java.util.Objects;
+
+@Controller
 @RequiredArgsConstructor
 public class UserController {
 
     @Autowired
     private final UserService userService;
 
-    private final UserRepository userRepository;
-
-//    @GetMapping(value = "/")
-//    public String home(){
-//        return "Hello from our website. This is a functionality test";
-//    }
-
+    @GetMapping("/registration")
+    public void home(){
+        //return "Hello from our website. This is a functionality test";
+    }
+    
     @GetMapping("/users")
-    public List<User> getUsers(){
-        return userService.getUsers();
+    public String getUsers(){
+        return "users";
     }
 
     @PostMapping("/user")
     public User addUser(@RequestBody User user){
-        return userService.saveUser(user);
+        User newUser = new User(user.getUsername(),user.getEmail(),user.getPassword());
+        return userService.saveUser(newUser);
     }
 
     @PutMapping("/users/{id}")
@@ -41,7 +42,7 @@ public class UserController {
     }
 
     @DeleteMapping("/employees/{id}")
-    void deleteEmployee(@PathVariable String id) {
+    void deleteUser(@PathVariable String id) {
         userService.deleteById(id);
     }
 
