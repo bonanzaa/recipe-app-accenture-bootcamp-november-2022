@@ -27,6 +27,10 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private int isAccountNonExpiredBit;
+    private int isAccountNonLockedBit;
+    private int isCredentialsNonExpiredBit;
+    private int isEnabledBit;
 
     public User(String username,String email,String password){
         this.username = username;
@@ -68,6 +72,64 @@ public class User {
     public void setRole(String newRole){
         this.role = newRole;
     }
+
+    public boolean getIsAccountNonExpired() {
+        if(isAccountNonExpiredBit == 1) return true;
+
+        return false;
+    }
+
+    public void setAccountNonExpired(boolean accountNonExpired) {
+        if(accountNonExpired) {
+            isAccountNonExpiredBit = 1;
+        }else{
+            isAccountNonExpiredBit = 0;
+        }
+
+    }
+
+    public boolean getIsAccountNonLocked() {
+        if(isAccountNonLockedBit == 1) return true;
+
+        return false;
+    }
+
+    public void setAccountNonLocked(boolean accountNonLocked) {
+        if(accountNonLocked) {
+            isAccountNonLockedBit = 1;
+        }else{
+            isAccountNonLockedBit = 0;
+        }
+    }
+
+    public boolean getIsCredentialsNonExpired() {
+        if(isCredentialsNonExpiredBit == 1) return true;
+
+        return false;
+    }
+
+    public void setCredentialsNonExpired(boolean credentialsNonExpired) {
+        if(credentialsNonExpired) {
+            isCredentialsNonExpiredBit = 1;
+        }else{
+            isCredentialsNonExpiredBit = 0;
+        }
+    }
+
+    public boolean getIsEnabled() {
+        if(isEnabledBit == 1) return true;
+
+        return false;
+    }
+
+    public void setEnabled(boolean enabled) {
+        if(enabled) {
+            isEnabledBit = 1;
+        }else{
+            isEnabledBit = 0;
+        }
+    }
+
 
     @Override
     public boolean equals(Object o) {
