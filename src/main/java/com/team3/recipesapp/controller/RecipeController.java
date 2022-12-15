@@ -46,14 +46,17 @@ public class RecipeController {
         return "allrecipes";
     }
 
-    @PutMapping("/recipes/{id}")
-    public Recipe replaceEmployee(@RequestBody Recipe newRecipe, @PathVariable String id) {
+    @PutMapping(path = "/recipe/{id}")
+    public String replaceEmployee(@RequestBody Recipe newRecipe, @PathVariable String id) {
 
-        return recipeService.replaceRecipe(newRecipe,id);
+        recipeService.replaceRecipe(newRecipe,id);
+
+        return "home";
+
     }
 
 
-    @DeleteMapping("/recipes/{id}")
+    @DeleteMapping(path = "/recipe/{id}")
     void deleteRecipe(@PathVariable String id) {
         recipeService.deleteById(id);
     }

@@ -22,7 +22,7 @@ public class UserController {
 
     @Autowired
     private final UserService userService;
-    
+
     @GetMapping("/users")
     public String getUsers(){
         return "users";

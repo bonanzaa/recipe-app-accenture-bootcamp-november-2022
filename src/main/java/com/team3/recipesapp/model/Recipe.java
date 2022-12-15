@@ -38,6 +38,7 @@ public class Recipe {
 
     private byte[] photo;
     private String title;
+    private String description;
     private String instructions;
     private String ingredients;
     private String tags;
@@ -57,6 +58,9 @@ public class Recipe {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public String getDescription(){return this.description;}
+    public void setDescription(String description){this.description = description;}
 
     public String getInstructions() {
         return instructions;
@@ -92,8 +96,23 @@ public class Recipe {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+    public Recipe(String title,String description, String instructions,String ingredients,String tags,byte[] photo){
+        this.title = title;
+        this.description = description;
+        this.instructions = instructions;
+        this.ingredients = ingredients;
+        this.tags = tags;
+
+        this.photo = photo;
+
+        java.util.Date date = new Date();
+        Timestamp param = new java.sql.Timestamp(date.getTime());
+        this.creationTime = Timestamp.valueOf(sdf.format(param));
+    }
+
     public Recipe(String title, String instructions,String ingredients,String tags,byte[] photo){
         this.title = title;
+        this.description = "No description.";
         this.instructions = instructions;
         this.ingredients = ingredients;
         this.tags = tags;
