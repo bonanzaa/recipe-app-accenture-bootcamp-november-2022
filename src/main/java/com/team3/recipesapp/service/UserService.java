@@ -2,7 +2,11 @@ package com.team3.recipesapp.service;
 
 import com.team3.recipesapp.model.User;
 import com.team3.recipesapp.repository.UserRepository;
+import com.team3.recipesapp.security.ApplicationSecurityConfig;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,8 +35,12 @@ public class UserService {
                 .map(user -> {
                     user.setUsername(newUser.getUsername());
                     user.setEmail(newUser.getEmail());
-                    user.setPassword(newUser.getPassword());
-                    user.setRole(newUser.getRole());
+                    user.setPassword(ApplicationSecurityConfig.passwordEncoder().encode(newUser.getPassword()));
+                    if(newUser.getRole() == null){
+                        user.setRole("ROLE_USER");
+                    }else{
+                        user.setRole(newUser.getRole());
+                    }
 
                     return userRepository.save(user);
                 })
@@ -41,4 +49,5 @@ public class UserService {
                     return userRepository.save(newUser);
                 });
     }
+
 }
