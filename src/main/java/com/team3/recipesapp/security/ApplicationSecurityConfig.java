@@ -26,7 +26,19 @@ public class ApplicationSecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests(
                         auth -> auth
-                                .requestMatchers("/","/recipe", "/index", "/css/*", "/js/*").permitAll()
+                                .requestMatchers(
+                                        "/",
+                                        "/*","/users/**",
+                                        "/recipe",
+                                        "/recipe/*",
+                                        "/user",
+                                        "/user/*",
+                                        "/index",
+                                        "/css/*",
+                                        "/js/*",
+                                        "/registration"
+                                )
+                                .permitAll()
                                 .anyRequest()
                                 .authenticated()
                 )
@@ -48,7 +60,7 @@ public class ApplicationSecurityConfig {
     }
 
     @Bean
-    PasswordEncoder passwordEncoder() {
+    public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }

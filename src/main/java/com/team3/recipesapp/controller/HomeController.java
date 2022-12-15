@@ -1,6 +1,5 @@
 package com.team3.recipesapp.controller;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

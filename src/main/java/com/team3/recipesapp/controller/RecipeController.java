@@ -58,14 +58,18 @@ public class RecipeController {
         return "allrecipes";
     }
 
+
     @PutMapping("/recipes/{id}")
     public Recipe replacerecipe(@RequestBody Recipe newRecipe, @PathVariable String id) {
+        recipeService.replaceRecipe(newRecipe,id);
 
-        return recipeService.replaceRecipe(newRecipe,id);
+        return "home";
+
+
     }
 
 
-    @DeleteMapping("/recipes/{id}")
+    @DeleteMapping(path = "/recipe/{id}")
     void deleteRecipe(@PathVariable String id) {
         recipeService.deleteById(id);
     }

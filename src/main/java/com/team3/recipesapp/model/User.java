@@ -68,7 +68,7 @@ public class User {
     public void setRole(String newRole){
         this.role = newRole;
     }
-    
+
 
     @Override
     public boolean equals(Object o) {
