@@ -36,7 +36,7 @@ public class UserController {
     }
 
     @PutMapping("/users/{id}")
-    public User replaceEmployee(@RequestBody User newUser, @PathVariable String id) {
+    public User replaceUser(@RequestBody User newUser, @PathVariable String id) {
 
         return userService.replaceUser(newUser,id);
     }
