@@ -55,4 +55,13 @@ public class RecipeService {
         recipeRepository.save(newRecipe);
     }
 
+    public Recipe getRecipeByID(String id){
+        var obj = recipeRepository.findById(id);
+        if(obj.isPresent()){
+            return obj.get();
+        }else{
+            return new Recipe("No recipe found with ID: " + id,"error","error","error",null);
+        }
+    }
+
 }

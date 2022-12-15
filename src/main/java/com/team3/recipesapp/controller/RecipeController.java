@@ -60,12 +60,10 @@ public class RecipeController {
 
 
     @PutMapping("/recipes/{id}")
-    public Recipe replacerecipe(@RequestBody Recipe newRecipe, @PathVariable String id) {
+    public String replacerecipe(@RequestBody Recipe newRecipe, @PathVariable String id) {
         recipeService.replaceRecipe(newRecipe,id);
 
         return "home";
-
-
     }
 
 

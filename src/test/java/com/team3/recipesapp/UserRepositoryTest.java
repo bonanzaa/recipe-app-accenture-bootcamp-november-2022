@@ -44,5 +44,5 @@ public class UserRepositoryTest {
         assertThat(user).hasFieldOrPropertyWithValue("password","12345");
 
     }
-    
+
 }

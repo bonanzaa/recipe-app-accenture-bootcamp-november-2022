@@ -9,7 +9,7 @@
     <thead>
     <tr>
         <th> Title </th>
-        <th> Ingredients </th>
+        <th> Instructions </th>
     </tr>
     </thead>
     <tbody>
@@ -17,6 +17,7 @@
         <td colspan="2"> No Recipes Available </td>
     </tr>
     <tr th:each="recipe : ${recipes}">
+
         <td><span th:text="${recipe.title}"> Title </span></td>
         <td><span th:text="${recipe.ingredients}"> Instructions </span></td>
     </tr>
