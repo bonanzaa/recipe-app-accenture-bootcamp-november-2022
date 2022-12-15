@@ -1,6 +1,6 @@
 package com.team3.recipesapp.model;
 
-import com.team3.recipesapp.utility.userRole;
+//import com.team3.recipesapp.security.userRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -32,7 +32,7 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.role = userRole.DefaultUser.name();
+        this.role = "ROLE_USER";
     }
 
     public String getID(){
@@ -63,10 +63,10 @@ public class User {
         this.password = password;
     }
     public String getRole(){
-        return this.role.toString();
+        return this.role;
     }
-    public void setRole(userRole newRole){
-        this.role = newRole.name();
+    public void setRole(String newRole){
+        this.role = newRole;
     }
 
     @Override
