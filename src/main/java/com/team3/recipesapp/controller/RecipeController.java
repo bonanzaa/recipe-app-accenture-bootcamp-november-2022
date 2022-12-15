@@ -1,21 +1,19 @@
 package com.team3.recipesapp.controller;
 
-import com.azure.core.annotation.Get;
 import com.team3.recipesapp.model.Recipe;
-import com.team3.recipesapp.model.User;
-import com.team3.recipesapp.repository.RecipeRepository;
 import com.team3.recipesapp.service.RecipeService;
-import com.team3.recipesapp.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -23,13 +21,30 @@ public class RecipeController {
     @Autowired
     private final RecipeService recipeService;
 
-//    @GetMapping("/recipes")
-//    public String getRecipe(@PathVariable Long id, Model model) {
-//        //Recipe recipe = RecipeRepository.findById(id);
-//
-//        //model.addAttribute("recipe", recipe);
-//        return "recipe";
-//    }
+    @RequestMapping("/recipes/{id}")
+    public String viewRecipe(@PathVariable String id, Model model) {
+
+        Recipe recipe = recipeService.getRecipeByID(id);
+
+        model.addAttribute("recipe", recipe);
+
+        return "recipes";
+    }
+
+    @RequestMapping("/photos/{id}")
+    public ResponseEntity<byte[]> viewPhoto(@PathVariable String id) {
+
+        Recipe recipe = recipeService.getRecipeByID(id);
+
+        byte[] imageBytes = recipe.getPhoto();
+
+        HttpHeaders headers = new HttpHeaders();
+
+        headers.setContentType(MediaType.IMAGE_JPEG);
+
+        return new ResponseEntity<>(imageBytes, headers, HttpStatus.OK);
+    }
+
     @GetMapping("/recipes")
     public String showRecipe(){
         return "recipes";
