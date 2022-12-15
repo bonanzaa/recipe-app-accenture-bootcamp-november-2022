@@ -41,10 +41,10 @@ public class RecipeController {
 
     @PostMapping("/createrecipe")
     public String submitRecipe(@RequestParam("imageFile")MultipartFile imageFile,@RequestParam("title") String title,
-                              @RequestParam("ingredients") String ingredients,@RequestParam("instructions") String instructions,
+                              @RequestParam("ingredients") String ingredients,@RequestParam("description") String description,@RequestParam("instructions") String instructions,
                               @RequestParam("tags") String tags){
         try {
-            recipeService.saveRecipe(imageFile,title,ingredients,instructions,tags);
+            recipeService.saveRecipe(imageFile,title,ingredients,description,instructions,tags);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

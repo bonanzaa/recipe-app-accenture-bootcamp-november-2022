@@ -36,6 +36,7 @@ public class RecipeService {
                 .map(recipe -> {
                     recipe.setTitle(newRecipe.getTitle());
                     recipe.setInstructions(newRecipe.getInstructions());
+                    recipe.setDescription(newRecipe.getDescription());
                     recipe.setIngredients(newRecipe.getIngredients());
                     recipe.setTags(newRecipe.getTags());
                     recipe.setCreationTime(newRecipe.getCreationTime());
@@ -48,10 +49,10 @@ public class RecipeService {
                 });
     }
 
-    public void saveRecipe(MultipartFile imageFile,String title, String ingredients,String instructions,String tags) throws IOException {
+    public void saveRecipe(MultipartFile imageFile,String title, String ingredients,String description,String instructions,String tags) throws IOException {
         byte[] bytes = imageFile.getBytes();
 
-        Recipe newRecipe = new Recipe(title,ingredients,instructions,tags,bytes);
+        Recipe newRecipe = new Recipe(title,ingredients,description,instructions,tags,bytes);
         recipeRepository.save(newRecipe);
     }
 
@@ -60,7 +61,7 @@ public class RecipeService {
         if(obj.isPresent()){
             return obj.get();
         }else{
-            return new Recipe("No recipe found with ID: " + id,"error","error","error",null);
+            return new Recipe("No recipe found with ID: " + id,"error","error","error","error",null);
         }
     }
 

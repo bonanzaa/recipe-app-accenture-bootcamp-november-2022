@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +13,7 @@
 <body>
 <div class="wrapper d-flex">
     <div class="sidebar">
+
         <ul>
             <li><a href="/recipelist"><i class="fas fa-home"></i>All recipes</a></li>
             <li><a href="#"><i class="fas fa-users"></i>Main dishes</a></li>
@@ -22,6 +23,8 @@
             <li><a href="#"><i class="fas fa-users"></i>Snacks</a></li>
             <li><a href="#"><i class="fas fa-users"></i>Vegetarian</a></li>
             <li><a href="#"><i class="fas fa-users"></i>Vegan</a></li>
+            <!--      <li class="notification1"><a href="#"><i class="far fa-envelope"></i>My recipes</a></li>-->
+            <!--      <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Favorites</a></li></li>-->
         </ul>
         <p class="myrecipes px-3"> My recipes</p>
         <ul>
@@ -29,9 +32,11 @@
             <li><a href="#">Favorites</a></li>
         </ul>
         <div class="userProfile">
-            <a href="#"><i class="far fa-user-circle  xyz"></i></a>
-            <p class="username">New User<br><a href="#">View Profile</a></p>
-            <a href="#"><i class="fas fa-cog mnp"></i></a>
+            <ul>
+                <p class="username" sec:authentication="name" > </p>
+                <li><a href="/profile" >View Profile</a></li>
+            </ul>
+
         </div>
     </div>
 </div>
@@ -66,6 +71,11 @@
 
                                         <label for="ingredients">Ingredients:</label>
                                         <input type="text" id="ingredients" name="ingredients" placeholder="Type your text">
+
+
+                                        <label for="description">Description:</label>
+                                        <input type="text" id="description" name="instructions" placeholder="Type your text">
+
 
                                         <label for="instructions">Instructions:</label>
                                         <input type="text" id="instructions" name="instructions" placeholder="Type your text">

@@ -7,6 +7,7 @@
 /*}*/
 body{
     background: #ffffff;
+    margin: 0;
 }
 .wrapper{
     position: relative;
@@ -59,7 +60,7 @@ body{
 .userProfile{
     position: absolute;
     bottom: 0;
-    margin-left:50px;
+
     display: flex;
 
 }
@@ -76,36 +77,16 @@ body{
 }
 .userProfile p{
     color: #fff;
-    padding: 0 15px 0 15px;
-    font-size: 30px;
+
+    font-size: 20px;
     font-weight: bolder;
 
 }
 .userProfile
-.xyz,
-.mnp{
+{
     padding-top: 60%;
     line-height: 30px;
     font-size: 25px!important;
-}
-.notification1{
-    display: flex;
-}
-.notification1 .number1{
-    font-size: 15px;
-    display: block;
-    padding-left: 100px;
-    color: #fff;
-}
-
-.notification2{
-    display: flex;
-}
-.notification2 .number2{
-    font-size: 15px;
-    display: block;
-    padding-left: 85px;
-    color: #fff;
 }
 .form-wrap {
     width:100%;
@@ -134,7 +115,7 @@ h1 {
 /*}*/
 
 .padding-bottom-50{
-    padding-bottom: 5.0rem;
+    padding-bottom: 20px;
 }
 
 .row{
@@ -204,6 +185,22 @@ input[id="tags"]:focus{
     box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
 }
 
+input[id="description"] {
+    border-width: 1px;
+    border-color: grey;
+    border-style: dotted;
+    outline: none;
+    height: 20px;
+    width: 100%;
+    align: center;
+    padding: 10px 15px;
+    background: #ffffff;
+    margin-bottom: 20px;
+}
+input[id="description"]:focus{
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+
 .col-lg-8{
     max-width: 66%;
 }
@@ -232,4 +229,7 @@ label, span{
     margin-bottom: 15px;
     font-family: sans-serif;
 
+}
+.card{
+    margin: 20px;
 }
