@@ -26,6 +26,11 @@ public class UserController {
         return userService.saveUser(newUser);
     }
 
+    @GetMapping("/profile")
+    public void profile(){
+
+    }
+
     @PutMapping(path ="/{id}")
     public String replaceUser(@RequestBody User newUser, @PathVariable String id) {
 

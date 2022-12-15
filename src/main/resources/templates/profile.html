@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feed</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css%22%3E">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js%3E">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js%22%3E">
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css%22%3E">
+    <link rel="stylesheet" type="text/css" href="/css/style3.css" th:href="@{/css/style3.css}" />
+</head>
+<body>
+<div class="wrapper d-flex">
+    <div class="sidebar">
+
+        <ul>
+            <li><a href="/recipelist"><i class="fas fa-home"></i>All recipes</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>Main dishes</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>Soups and stews</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>Salads</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>Desserts</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>Snacks</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>Vegetarian</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>Vegan</a></li>
+            <!--      <li class="notification1"><a href="#"><i class="far fa-envelope"></i>My recipes</a></li>-->
+            <!--      <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Favorites</a></li></li>-->
+        </ul>
+        <p class="myrecipes px-3"> My recipes</p>
+        <ul>
+            <li><a href="#">View all</a></li>
+            <li><a href="#">Favorites</a></li>
+        </ul>
+        <div class="userProfile">
+            <ul>
+                <p class="username" sec:authentication="name" > </p>
+                <li><a href="/profile" >View Profile</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center" >
+                        <img src="https://cdn0.iconfinder.com/data/icons/avatar-15/512/chef-512.png" class="rounded-circle img-fluid" width="150px">
+
+                        <h4 sec:authentication="name"></h4>
+                        <p1 class="text">Great chef!</p1>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="card-body">
+                    <div class="row">
+
+                        <p2 class="mb-0" >Username</p2>
+
+                        <p class="text-muted mb-0" sec:authentication="name"></p>
+
+                    </div>
+
+                    <hr>
+                    <div class="row">
+
+                        <p2 class="mb-0">Email</p2>
+
+                        <p class="text-muted mb-0"  ></p>
+
+                    </div>
+                    <hr>
+                    <div class="row">
+
+                        <p2 class="mb-0">Role</p2>
+
+                        <p class="text-muted mb-0" ></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

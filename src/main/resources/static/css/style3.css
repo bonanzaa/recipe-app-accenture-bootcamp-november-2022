@@ -1,0 +1,123 @@
+body{
+    background: #ffffff;
+}
+.wrapper{
+    position: relative;
+}
+.sidebar{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: #4e726b ;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+    font-family: arial;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: arial;
+    list-style-type: none;
+}
+.wrapper .sidebar ul li{
+    padding: 20px;
+    list-style-type: none;
+}
+.wrapper .sidebar ul li a{
+    color: #FFFFFF  ;
+    display: block;
+    font-size: 16px;
+    list-style-type: none;
+}
+.wrapper .sidebar ul li a .fas{
+    width: 35px!important;
+}
+.wrapper .sidebar ul li a .far{
+    width: 35px!important;
+}
+.wrapper .sidebar ul li:hover{
+    background: #f0e02e;
+}
+.wrapper .sidebar ul li a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.myrecipes{
+    margin-top: 15px;
+    margin-left: 50px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 15px 0;
+    margin-bottom: 0;
+    font-weight: bolder;
+}
+.userProfile{
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+
+}
+.userProfile a{
+
+    color: #b6d0f1;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.userProfile a:hover{
+    color: #fff;
+    background: #f0e02e;
+}
+.userProfile p{
+    color: #fff;
+
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+.userProfile
+{
+    padding-top: 60%;
+    line-height: 30px;
+    font-size: 25px!important;
+}
+
+.row{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.main{
+    margin-left: 250px;
+}
+.col-lg-4{
+
+    width:480px;
+    background:#dddada;
+    text-align:center;
+    height:250px;
+
+    margin-bottom:20px;
+}
+
+
+hr{
+    color:grey;
+    height: 1px;
+    width: 400px;
+}
+
+p1{
+    margin-bottom: 10px;
+
+}
+p2{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight:bold;
+}
+.col-lg-6{
+    background-color: #a9cdb9;
+    width:480px;
+}
+.card-body{
+    padding: 10px;
+}
