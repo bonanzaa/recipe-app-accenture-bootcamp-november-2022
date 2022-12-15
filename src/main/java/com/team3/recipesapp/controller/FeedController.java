@@ -15,4 +15,6 @@ public class FeedController {
             model.addAttribute("message1", "What's on your mind");
             return "feed";
         }
+
+
     }

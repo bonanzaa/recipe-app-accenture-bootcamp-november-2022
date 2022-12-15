@@ -2,7 +2,6 @@ package com.team3.recipesapp.service;
 
 import com.team3.recipesapp.model.User;
 import com.team3.recipesapp.repository.UserRepository;
-import com.team3.recipesapp.utility.userRole;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +32,7 @@ public class UserService {
                     user.setUsername(newUser.getUsername());
                     user.setEmail(newUser.getEmail());
                     user.setPassword(newUser.getPassword());
-                    user.setRole(userRole.valueOf(newUser.getRole()));
+                    user.setRole(newUser.getRole());
 
                     return userRepository.save(user);
                 })

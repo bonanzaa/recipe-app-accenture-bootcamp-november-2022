@@ -53,8 +53,9 @@ h1 {
 
 
 }
-
-
+.row{
+    margin-left: 200px;
+}
 
 label, span {
     display: block;

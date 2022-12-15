@@ -2,22 +2,42 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feed</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css%22%3E">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js%3E">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js%22%3E">
+  <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css%22%3E">
+  <link rel="stylesheet" type="text/css" href="/css/style2.css" th:href="@{/css/style2.css}" />
 </head>
 <body>
-<!-- This is the navigation bar -->
-<!-- The sidebar -->
-<div class="sidebar">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-</div>
+<div class="wrapper d-flex">
+  <div class="sidebar">
 
-<!-- Page content -->
-<div class="content">
-  ..
+    <ul>
+      <li><a href="#"><i class="fas fa-home"></i>All recipes</a></li>
+      <li><a href="#"><i class="fas fa-users"></i>Main dishes</a></li>
+      <li><a href="#"><i class="fas fa-users"></i>Soups and stews</a></li>
+      <li><a href="#"><i class="fas fa-users"></i>Salads</a></li>
+      <li><a href="#"><i class="fas fa-users"></i>Desserts</a></li>
+      <li><a href="#"><i class="fas fa-users"></i>Snacks</a></li>
+      <li><a href="#"><i class="fas fa-users"></i>Vegetarian</a></li>
+      <li><a href="#"><i class="fas fa-users"></i>Vegan</a></li>
+      <!--      <li class="notification1"><a href="#"><i class="far fa-envelope"></i>My recipes</a></li>-->
+      <!--      <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Favorites</a></li></li>-->
+    </ul>
+    <p class="myrecipes px-3"> My recipes</p>
+    <ul>
+      <li><a href="#">View all</a></li>
+      <li><a href="#">Favorites</a></li>
+    </ul>
+    <div class="userProfile">
+      <a href="#"><i class="far fa-user-circle  xyz"></i></a>
+      <p class="username">Kristiana<br><a href="#">View Profile</a></p>
+      <a href="#"><i class="fas fa-cog mnp"></i></a>
+    </div>
+
+  </div>
 </div>
 
 </body>

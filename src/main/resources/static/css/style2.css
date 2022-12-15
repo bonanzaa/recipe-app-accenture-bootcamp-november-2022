@@ -1,0 +1,235 @@
+/**{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*    list-style: none;*/
+
+/*}*/
+body{
+    background: #ffffff;
+}
+.wrapper{
+    position: relative;
+}
+.sidebar{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: #4e726b ;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+    font-family: arial;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: arial;
+    list-style-type: none;
+}
+.wrapper .sidebar ul li{
+    padding: 20px;
+    list-style-type: none;
+}
+.wrapper .sidebar ul li a{
+    color: #FFFFFF  ;
+    display: block;
+    font-size: 16px;
+    list-style-type: none;
+}
+.wrapper .sidebar ul li a .fas{
+    width: 35px!important;
+}
+.wrapper .sidebar ul li a .far{
+    width: 35px!important;
+}
+.wrapper .sidebar ul li:hover{
+    background: #f0e02e;
+}
+.wrapper .sidebar ul li a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.myrecipes{
+    margin-top: 15px;
+    margin-left: 50px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 15px 0;
+    margin-bottom: 0;
+    font-weight: bolder;
+}
+.userProfile{
+    position: absolute;
+    bottom: 0;
+    margin-left:50px;
+    display: flex;
+
+}
+.userProfile a{
+
+    color: #b6d0f1;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.userProfile a:hover{
+    color: #fff;
+    background: #f0e02e;
+}
+.userProfile p{
+    color: #fff;
+    padding: 0 15px 0 15px;
+    font-size: 30px;
+    font-weight: bolder;
+
+}
+.userProfile
+.xyz,
+.mnp{
+    padding-top: 60%;
+    line-height: 30px;
+    font-size: 25px!important;
+}
+.notification1{
+    display: flex;
+}
+.notification1 .number1{
+    font-size: 15px;
+    display: block;
+    padding-left: 100px;
+    color: #fff;
+}
+
+.notification2{
+    display: flex;
+}
+.notification2 .number2{
+    font-size: 15px;
+    display: block;
+    padding-left: 85px;
+    color: #fff;
+}
+.form-wrap {
+    width:100%;
+    height: 100%;
+    margin-right: 225px;
+
+
+}
+.main{
+    margin-left: 250px;
+}
+.bg-light {
+    background-image: url("https://www.ramjicaterers.com/wp-content/uploads/2019/09/innerpagebanner.jpg");
+    height: 250px;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    color:teal;
+}
+
+/*.padding-top-74 {*/
+/*    padding-top: 7.4rem;*/
+/*}*/
+
+.padding-bottom-50{
+    padding-bottom: 5.0rem;
+}
+
+.row{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+input[id="title"] {
+    border-width: 1px;
+    border-color: grey;
+    border-style: dotted;
+    outline: none;
+    height: 20px;
+    width: 100%;
+    align: center;
+    padding: 10px 15px;
+    background: #ffffff;
+    margin-bottom: 20px;
+}
+input[id="title"]:focus{
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+
+input[id="ingredients"] {
+    border-width: 1px;
+    border-color: grey;
+    border-style: dotted;
+    outline: none;
+    height: 20px;
+    width: 100%;
+    align: center;
+    padding: 10px 15px;
+    background: #ffffff;
+    margin-bottom: 20px;
+}
+input[id="ingredients"]:focus{
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+input[id="instructions"] {
+    border-width: 1px;
+    border-color: grey;
+    border-style: dotted;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    align: center;
+    padding: 10px 15px;
+    background: #ffffff;
+    margin-bottom: 20px;
+}
+input[id="instructions"]:focus{
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+input[id="tags"] {
+    border-width: 1px;
+    border-color: grey;
+    border-style: dotted;
+    outline: none;
+    height: 20px;
+    width: 100%;
+    align: center;
+    padding: 10px 15px;
+    background: #ffffff;
+    margin-bottom: 20px;
+}
+input[id="tags"]:focus{
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+
+.col-lg-8{
+    max-width: 66%;
+}
+
+.col-lg-4{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+input[type="submit"]{
+    padding: 10px 0;
+    border-width: 1px;
+    border-color: #0e0e0e;
+    display: block;
+    width: 120px;
+    margin: 25px auto 0;
+    background: #96bae7;
+    align:left;
+
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    outline: none;
+}
+
+label, span{
+    margin-bottom: 15px;
+    font-family: sans-serif;
+
+}
