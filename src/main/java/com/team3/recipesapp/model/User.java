@@ -27,10 +27,6 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private int accountnonexpired;
-    private int accountnonlocked;
-    private int credentialsnonexpired;
-    private int enabled;
 
     public User(String username,String email,String password){
         this.username = username;
@@ -72,63 +68,7 @@ public class User {
     public void setRole(String newRole){
         this.role = newRole;
     }
-
-    public boolean getIsAccountNonExpired() {
-        if(accountnonexpired == 1) return true;
-
-        return false;
-    }
-
-    public void setAccountNonExpired(boolean accountNonExpired) {
-        if(accountNonExpired) {
-            accountnonexpired = 1;
-        }else{
-            accountnonexpired = 0;
-        }
-    }
-
-    public boolean getIsAccountNonLocked() {
-        if(accountnonlocked == 1) return true;
-
-        return false;
-    }
-
-    public void setAccountNonLocked(boolean accountNonLocked) {
-        if(accountNonLocked) {
-            accountnonlocked = 1;
-        }else{
-            accountnonlocked = 0;
-        }
-    }
-
-    public boolean getIsCredentialsNonExpired() {
-        if(credentialsnonexpired == 1) return true;
-
-        return false;
-    }
-
-    public void setCredentialsNonExpired(boolean credentialsNonExpired) {
-        if(credentialsNonExpired) {
-            credentialsnonexpired = 1;
-        }else{
-            credentialsnonexpired = 0;
-        }
-    }
-
-    public boolean getIsEnabled() {
-        if(enabled == 1) return true;
-
-        return false;
-    }
-
-    public void setEnabled(boolean enabled) {
-        if(enabled) {
-            this.enabled = 1;
-        }else{
-            this.enabled = 0;
-        }
-    }
-
+    
 
     @Override
     public boolean equals(Object o) {
