@@ -21,9 +21,9 @@ public class UserController {
     }
 
     @PostMapping("/user")
-    public User addUser(@RequestBody User user){
+    public void addUser(@RequestBody User user){
         User newUser = new User(user.getUsername(),user.getEmail(), ApplicationSecurityConfig.passwordEncoder().encode(user.getPassword()));
-        return userService.saveUser(newUser);
+        userService.saveUser(newUser);
     }
 
     @GetMapping("/profile")

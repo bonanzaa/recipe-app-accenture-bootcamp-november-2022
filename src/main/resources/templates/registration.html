@@ -61,9 +61,14 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(data)
-        });
-        alert("User created successfully! You can now log in");
-        window.location.replace("http://localhost:9191/login");
+        }).then((response) => {
+            if (response.ok) {
+                alert("User created successfully! You can now log in");
+                window.location.replace("http://localhost:9191/login");
+            } else {
+                alert("Email or username is already taken");
+            }
+        })
     });
 </script>
 </body>
