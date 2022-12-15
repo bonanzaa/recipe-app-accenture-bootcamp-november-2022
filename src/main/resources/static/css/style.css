@@ -78,7 +78,7 @@ label1, span {
 
 }
 
-input[type="text"], input[type="username"] {
+input[type="text"], input[type="username"], input[type="email"] {
     border-width: 0;
     outline: none;
     margin: 0;
@@ -87,7 +87,7 @@ input[type="text"], input[type="username"] {
     padding: 10px 15px;
     background: #f9efd2;
 }
-input[type="text"]:focus, input[type="username"]:focus {
+input[type="text"]:focus, input[type="username"]:focus, input[type="email"]:focus {
     box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
 }
 
@@ -100,7 +100,7 @@ input[type="password"], input[type="password"] {
     padding: 10px 15px;
     background: #f9efd2;
 }
-input[type="text"]:focus, input[type="username"]:focus {
+input[type="text"]:focus, input[type="username"]:focus, input[type="email"]:focus {
     box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
 }
 
