@@ -53,7 +53,6 @@ public class RecipeService {
 
         Recipe newRecipe = new Recipe(title,ingredients,instructions,tags,bytes);
         recipeRepository.save(newRecipe);
-
     }
 
 }

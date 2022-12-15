@@ -1,8 +1,13 @@
 package com.team3.recipesapp;
 
+import com.team3.recipesapp.model.User;
+import com.team3.recipesapp.repository.UserRepository;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.io.IOException;
 import java.sql.*;
@@ -66,6 +71,5 @@ public class RecipesAppApplication {
 
         log.info("Database woken up.");
     }
-
-
+    
 }

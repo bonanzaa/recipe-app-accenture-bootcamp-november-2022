@@ -27,10 +27,10 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private int isAccountNonExpiredBit;
-    private int isAccountNonLockedBit;
-    private int isCredentialsNonExpiredBit;
-    private int isEnabledBit;
+    private int accountnonexpired;
+    private int accountnonlocked;
+    private int credentialsnonexpired;
+    private int enabled;
 
     public User(String username,String email,String password){
         this.username = username;
@@ -74,59 +74,58 @@ public class User {
     }
 
     public boolean getIsAccountNonExpired() {
-        if(isAccountNonExpiredBit == 1) return true;
+        if(accountnonexpired == 1) return true;
 
         return false;
     }
 
     public void setAccountNonExpired(boolean accountNonExpired) {
         if(accountNonExpired) {
-            isAccountNonExpiredBit = 1;
+            accountnonexpired = 1;
         }else{
-            isAccountNonExpiredBit = 0;
+            accountnonexpired = 0;
         }
-
     }
 
     public boolean getIsAccountNonLocked() {
-        if(isAccountNonLockedBit == 1) return true;
+        if(accountnonlocked == 1) return true;
 
         return false;
     }
 
     public void setAccountNonLocked(boolean accountNonLocked) {
         if(accountNonLocked) {
-            isAccountNonLockedBit = 1;
+            accountnonlocked = 1;
         }else{
-            isAccountNonLockedBit = 0;
+            accountnonlocked = 0;
         }
     }
 
     public boolean getIsCredentialsNonExpired() {
-        if(isCredentialsNonExpiredBit == 1) return true;
+        if(credentialsnonexpired == 1) return true;
 
         return false;
     }
 
     public void setCredentialsNonExpired(boolean credentialsNonExpired) {
         if(credentialsNonExpired) {
-            isCredentialsNonExpiredBit = 1;
+            credentialsnonexpired = 1;
         }else{
-            isCredentialsNonExpiredBit = 0;
+            credentialsnonexpired = 0;
         }
     }
 
     public boolean getIsEnabled() {
-        if(isEnabledBit == 1) return true;
+        if(enabled == 1) return true;
 
         return false;
     }
 
     public void setEnabled(boolean enabled) {
         if(enabled) {
-            isEnabledBit = 1;
+            this.enabled = 1;
         }else{
-            isEnabledBit = 0;
+            this.enabled = 0;
         }
     }
 
