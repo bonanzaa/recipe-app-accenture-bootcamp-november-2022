@@ -1,15 +1,16 @@
 package com.team3.recipesapp.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/home")
+//@RequestMapping("/feed")
 public class HomeController {
 
-    @GetMapping()
-    public String getHomeView() {
-        return "home";
+//        @GetMapping("/home")
+//        String getHome(Model model) {
+//            model.addAttribute("message1", "What's on your mind");
+//            return "home";
+//        }
     }
-}
