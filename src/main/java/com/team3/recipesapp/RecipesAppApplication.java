@@ -30,7 +30,7 @@ public class RecipesAppApplication {
         connectToDB();
         log.info("Starting timeout before running the app.");
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
