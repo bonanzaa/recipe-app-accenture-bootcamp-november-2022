@@ -24,8 +24,6 @@
       <li><a href="#"><i class="fas fa-users"></i>Snacks</a></li>
       <li><a href="#"><i class="fas fa-users"></i>Vegetarian</a></li>
       <li><a href="#"><i class="fas fa-users"></i>Vegan</a></li>
-      <!--      <li class="notification1"><a href="#"><i class="far fa-envelope"></i>My recipes</a></li>-->
-      <!--      <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Favorites</a></li></li>-->
     </ul>
     <p class="myrecipes px-3"> My recipes</p>
     <ul>
@@ -36,6 +34,7 @@
       <ul>
         <p class="username" sec:authentication="name" > </p>
         <li><a href="/profile" >View Profile</a></li>
+        <li><a href="/logout" >Log out</a></li>
       </ul>
 
     </div>
@@ -54,44 +53,23 @@
           </div>
         </section>
         <section class="submit-recipe-page-wrap padding-top-74 padding-bottom-50">
-          <h1>{{recipe.name}}</h1>
+          <h1 th:text="${recipe.title}">Recipe name</h1>
         </section>
       </div>
     </div>
   </div>
-  <div class="container mt-5">
+  <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <img src="pizza.jpg" alt="Pizza" class="img-fluid">
+        <img th:src="@{/photos/{id}(id=${recipe.id})}" alt="Pizza" class="img-fluid">
       </div>
       <div class="col-md-6">
-        <h1 class="mb-3">Pizza Recipe</h1>
-        <p>This is a delicious recipe for homemade pizza. It's easy to make and tastes great!</p>
-        <h2>Ingredients</h2>
-        <ul>
-          <li>1 cup all-purpose flour</li>
-          <li>1/2 cup warm water</li>
-          <li>1/2 teaspoon active dry yeast</li>
-          <li>1 tablespoon olive oil</li>
-          <li>1/2 teaspoon salt</li>
-          <li>1 cup tomato sauce</li>
-          <li>1 cup shredded mozzarella cheese</li>
-          <li>1 cup sliced mushrooms</li>
-          <li>1 cup sliced bell peppers</li>
-          <li>1/2 cup sliced black olives</li>
-        </ul>
-        <h2>Instructions</h2>
-        <ol>
-          <li>In a small bowl, combine the warm water, yeast, and a pinch of sugar. Stir to dissolve and let sit for 5 minutes.</li>
-          <li>In a large mixing bowl, combine the flour and salt. Add the yeast mixture and olive oil, and stir to combine.</li>
-          <li>Turn the dough out onto a floured surface and knead for 5-10 minutes, until smooth and elastic.</li>
-          <li>Place the dough in a greased bowl and cover with a damp cloth. Let rise in a warm place for 1 hour, or until doubled in size.</li>
-          <li>Preheat the oven to 400 degrees F (200 degrees C).</li>
-          <li>Roll the dough out into a circle and place on a greased pizza pan. Spread the tomato sauce over the dough, leaving a 1-inch border around the edge.</li>
-          <li>Sprinkle the mozzarella cheese over the sauce, followed by the mushrooms, bell peppers, and black olives.</li>
-          <li>Bake the pizza for 20-25 minutes, or until the crust is golden brown and the cheese is melted and bubbly.</li>
-          <li>Let the pizza cool for a few minutes before slicing and serving.</li>
-        </ol>
+        <h3>Description</h3>
+        <p th:text="${recipe.description}">Recipe description</p>
+        <h3>Ingredients</h3>
+        <p th:text="${recipe.ingredients}">Recipe ingredients</p>
+        <p th:text="${recipe.instructions}">Recipe instructions</p>
+        <p th:text="${recipe.tags}">Recipe tags</p>
       </div>
     </div>
   </div>

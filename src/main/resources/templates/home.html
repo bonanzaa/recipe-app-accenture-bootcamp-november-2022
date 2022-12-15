@@ -24,8 +24,6 @@
             <li><a href="#"><i class="fas fa-users"></i>Snacks</a></li>
             <li><a href="#"><i class="fas fa-users"></i>Vegetarian</a></li>
             <li><a href="#"><i class="fas fa-users"></i>Vegan</a></li>
-            <!--      <li class="notification1"><a href="#"><i class="far fa-envelope"></i>My recipes</a></li>-->
-            <!--      <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Favorites</a></li></li>-->
         </ul>
         <p class="myrecipes px-3"> My recipes</p>
         <ul>
@@ -42,7 +40,6 @@
     </div>
 </div>
 <div class="main">
-    <!--  <div class="wrapper" id="wrapper">-->
     <div class="container">
         <div class="form-wrap">
             <div class="col">
@@ -62,34 +59,19 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="card" th:each="recipe : ${recipes}">
-                    <div class="card-body" >
-                        <p>
-                            Title :
-                        <td th:text="${recipe.title}">
-                        </p>
-                        <p>
-                            Decription :
-                        <td th:text="${recipe.description}">
-                        </p>
-
-
-                        <input type="hidden" id="imageBase64" value="${product.imageBase64}" readonly></input>
-                        <img id="imagePreview" th:src="${recipe.photo}" alt="Background image" />
-
-
-                        </br>
-
-
+            <div class="col-6 col-md-4" th:each="recipe : ${recipes}">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" th:src="@{/photos/{id}(id=${recipe.id})}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${recipe.title}">Recipe title</h5>
+                        <p class="card-text" th:text="${recipe.description}">Recipe description</p>
+                        <a th:href="@{/recipes/{id}(id=${recipe.id})}" class="btn btn-primary" >View Recipe</a>
 
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-    <!--  </div>-->
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
