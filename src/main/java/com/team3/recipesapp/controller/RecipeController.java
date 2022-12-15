@@ -3,6 +3,7 @@ package com.team3.recipesapp.controller;
 import com.azure.core.annotation.Get;
 import com.team3.recipesapp.model.Recipe;
 import com.team3.recipesapp.model.User;
+import com.team3.recipesapp.repository.RecipeRepository;
 import com.team3.recipesapp.service.RecipeService;
 import com.team3.recipesapp.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -22,12 +23,23 @@ public class RecipeController {
     @Autowired
     private final RecipeService recipeService;
 
-    @GetMapping("/recipe")
+//    @GetMapping("/recipes")
+//    public String getRecipe(@PathVariable Long id, Model model) {
+//        //Recipe recipe = RecipeRepository.findById(id);
+//
+//        //model.addAttribute("recipe", recipe);
+//        return "recipe";
+//    }
+    @GetMapping("/recipes")
+    public String showRecipe(){
+        return "recipes";
+    }
+    @GetMapping("/createrecipe")
     public String addRecipe(){
-        return "recipe";
+        return "createrecipe";
     }
 
-    @PostMapping("/recipe")
+    @PostMapping("/createrecipe")
     public String submitRecipe(@RequestParam("imageFile")MultipartFile imageFile,@RequestParam("title") String title,
                               @RequestParam("ingredients") String ingredients,@RequestParam("instructions") String instructions,
                               @RequestParam("tags") String tags){
@@ -46,12 +58,13 @@ public class RecipeController {
         return "allrecipes";
     }
 
-    @PutMapping(path = "/recipe/{id}")
-    public String replaceEmployee(@RequestBody Recipe newRecipe, @PathVariable String id) {
 
+    @PutMapping("/recipes/{id}")
+    public Recipe replacerecipe(@RequestBody Recipe newRecipe, @PathVariable String id) {
         recipeService.replaceRecipe(newRecipe,id);
 
         return "home";
+
 
     }
 
