@@ -29,15 +29,19 @@
                 <form class="registration">
                     <div>
                         <label for="email">Email address</label>
-                        <input type="text" name="email" id="email">
+                        <input type="text" name="email" id="email" required>
                     </div>
                     <div>
                         <label for="username">Username</label>
-                        <input type="text" name="username" id="username">
+                        <input type="text" name="username" id="username" required>
                     </div>
                     <div>
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
+                        <input type="password" name="password" id="password" required>
+                    </div>
+                    <div>
+                        <label for="repeat-password">Password</label>
+                        <input type="password" name="repeat-password" id="repeat-password" required>
                     </div>
                     <button type="submit" class="gradient-button">Sign up</button>
                 </form>
@@ -53,22 +57,31 @@
     registrationForm.addEventListener("submit", event => {
         event.preventDefault();
         const formData = new FormData(registrationForm);
-        const data = Object.fromEntries(formData);
-        console.log(data);
-        fetch("http://localhost:9191/user", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        }).then((response) => {
-            if (response.ok) {
-                alert("User created successfully! You can now log in");
-                window.location.replace("http://localhost:9191/login");
-            } else {
-                alert("Email or username is already taken");
-            }
-        })
+        console.log(formData.get("password"));
+        console.log(formData.get("repeat-password"));
+        if(formData.get("password") === formData.get("repeat-password")) {
+            formData.delete("repeat-password");
+            const data = Object.fromEntries(formData);
+            console.log("final data: ");
+            console.log(formData.get("repeat-password"));
+            console.log("Success");
+            fetch("http://localhost:9191/user", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }).then((response) => {
+                if (response.ok) {
+                    alert("User created successfully! You can now log in");
+                    window.location.replace("http://localhost:9191/login");
+                } else {
+                    alert("Email or username is already taken");
+                }
+            })
+        } else {
+            alert("Password fields do not match")
+        }
     });
 </script>
 </body>
