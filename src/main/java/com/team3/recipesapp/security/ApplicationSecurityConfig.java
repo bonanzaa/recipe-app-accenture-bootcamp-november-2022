@@ -13,6 +13,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.team3.recipesapp.security.UserRole.*;
+
 @EnableWebSecurity
 @Configuration
 @AllArgsConstructor
@@ -26,19 +28,15 @@ public class ApplicationSecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests(
                         auth -> auth
-                                .requestMatchers(
-                                        "/",
-                                        "/*","/users/**",
-                                        "/recipe",
-                                        "/recipe/*",
-                                        "/user",
-                                        "/user/*",
-                                        "/index",
-                                        "/css/*",
-                                        "/js/*",
-                                        "/registration"
-                                )
+                                .requestMatchers("/", "/user", "/css/*", "/js/*", "/registration")
                                 .permitAll()
+                                .requestMatchers( "/recipes", "/recipe", "/recipe/*",
+                                        "/recipes/*", "/profile", "/createrecipe", "/recipelist", "/home")
+                                .hasAnyRole(USER.name(), MODERATOR.name(), ADMIN.name())
+                                .requestMatchers("/users", "/user/edit/*")
+                                .hasAnyRole(MODERATOR.name(), ADMIN.name())
+                                .requestMatchers("/getAllUsers", "/user/delete/*", "/template1")
+                                .hasRole(ADMIN.name())
                                 .anyRequest()
                                 .authenticated()
                 )

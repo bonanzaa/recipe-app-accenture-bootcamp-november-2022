@@ -22,7 +22,7 @@ public class UserController {
 
     @PostMapping("/user")
     public void addUser(@RequestBody User user){
-        User newUser = new User(user.getUsername(),user.getEmail(), ApplicationSecurityConfig.passwordEncoder().encode(user.getPassword()));
+        User newUser = new User(user.getUsername(),user.getEmail(), ApplicationSecurityConfig.passwordEncoder().encode(user.getPassword()), "ROLE_USER");
         userService.saveUser(newUser);
     }
 
@@ -31,15 +31,14 @@ public class UserController {
 
     }
 
-    @PutMapping(path ="/{id}")
+    @PutMapping(path ="user/edit/{id}")
     public String replaceUser(@RequestBody User newUser, @PathVariable String id) {
-
         userService.replaceUser(newUser,id);
         return "home";
     }
 
 
-    @DeleteMapping(path ="/{id}")
+    @DeleteMapping(path ="user/delete/{id}")
     public String deleteUser(@PathVariable String id) {
         userService.deleteById(id);
 
