@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class WelcomeController {
-    @GetMapping("/tempelate1")
+    @GetMapping("/template1")
      String getHome(Model model) {
         model.addAttribute("message", "Welcome to the app!");
         return "index";

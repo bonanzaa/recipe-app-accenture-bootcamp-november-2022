@@ -1,6 +1,5 @@
 package com.team3.recipesapp.model;
 
-//import com.team3.recipesapp.security.userRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -28,11 +27,11 @@ public class User {
     private String email;
     private String password;
 
-    public User(String username,String email,String password){
+    public User(String username,String email,String password, String role){
         this.username = username;
         this.email = email;
         this.password = password;
-        this.role = "ROLE_USER";
+        this.role = role;
     }
 
     public String getID(){
