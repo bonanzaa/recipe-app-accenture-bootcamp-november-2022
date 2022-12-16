@@ -41,6 +41,8 @@ public class ApplicationSecurityConfig {
                                 .authenticated()
                 )
                 .userDetailsService(userDetailsService)
+                .httpBasic()
+                .and()
                 .formLogin()
                 .loginPage("/login").permitAll()
                 .defaultSuccessUrl("/home", true)
