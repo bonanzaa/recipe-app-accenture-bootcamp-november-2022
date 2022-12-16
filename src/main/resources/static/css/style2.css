@@ -17,7 +17,7 @@ body{
     width: 250px;
     height: 100%;
     background: #4e726b ;
-    padding: 20px 0;
+    padding: 15px 0;
     transition: all 0.5s ease;
     font-family: arial;
     box-sizing: border-box;
@@ -26,7 +26,7 @@ body{
     list-style-type: none;
 }
 .wrapper .sidebar ul li{
-    padding: 20px;
+    padding: 10px;
     list-style-type: none;
 }
 .wrapper .sidebar ul li a{
@@ -36,10 +36,10 @@ body{
     list-style-type: none;
 }
 .wrapper .sidebar ul li a .fas{
-    width: 35px!important;
+    width: 25px!important;
 }
 .wrapper .sidebar ul li a .far{
-    width: 35px!important;
+    width: 25px!important;
 }
 .wrapper .sidebar ul li:hover{
     background: #f0e02e;
@@ -68,7 +68,7 @@ body{
 
     color: #b6d0f1;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
 }
 .userProfile a:hover{
@@ -78,7 +78,7 @@ body{
 .userProfile p{
     color: #fff;
 
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bolder;
 
 }
@@ -96,7 +96,7 @@ body{
 
 }
 .main{
-    margin-left: 250px;
+    margin-left: 150px;
 }
 .bg-light {
     background-image: url("https://www.ramjicaterers.com/wp-content/uploads/2019/09/innerpagebanner.jpg");
