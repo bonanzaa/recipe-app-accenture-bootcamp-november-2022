@@ -33,11 +33,7 @@ public class UserRepositoryTest {
     @Test
     public void save_and_find_user_in_repository(){
 
-        User user = repository.save(new User("Alex","alex@gmail.com","12345"));
-        user.setUsername("Alex");
-        user.setPassword("12345");
-        user.setEmail("alex@gmail.com");
-        repository.save(user);
+        User user = repository.save(new User("Alex","alex@gmail.com","12345","ROLE_USER"));
 
         assertThat(user).hasFieldOrPropertyWithValue("username","Alex");
         assertThat(user).hasFieldOrPropertyWithValue("email", "alex@gmail.com");

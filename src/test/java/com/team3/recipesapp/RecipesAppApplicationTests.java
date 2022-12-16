@@ -33,9 +33,9 @@ class RecipesAppApplicationTests {
 
     @Test
     public void check_a_user_properties(){
-        User testuser = new User("testUser","Alex", "12345");
+        User testuser = new User("testUser","Alex@email.com", "12345","USER_ROLE");
 
-        assertThat(testuser).hasFieldOrPropertyWithValue("email","Alex");
+        assertThat(testuser).hasFieldOrPropertyWithValue("email","Alex@email.com");
         assertThat(testuser).hasFieldOrPropertyWithValue("username","testUser");
         assertThat(testuser).hasFieldOrPropertyWithValue("password","12345");
     }
