@@ -50,7 +50,7 @@ body{
 }
 .myrecipes{
     margin-top: 15px;
-    margin-left: 50px;
+    margin-left: 40px;
     color: #ffffff;
     font-size: 20px;
     padding: 15px 0;
@@ -108,6 +108,11 @@ h1 {
     text-align: center;
     font-weight: bold;
     color:teal;
+}
+
+h3{
+    font-size: 22px;
+    font-family: none;
 }
 
 /*.padding-top-74 {*/
@@ -232,4 +237,13 @@ label, span{
 }
 .card{
     margin: 20px;
+}
+.card-img-top{
+    width:100%;
+    height: 220px;
+}
+
+.img-fluid{
+    height:400px ;
+    width: 100%;
 }
