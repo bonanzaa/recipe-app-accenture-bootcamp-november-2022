@@ -28,6 +28,7 @@ body{
     display: block;
     font-size: 16px;
     list-style-type: none;
+    text-decoration:none;
 }
 .wrapper .sidebar ul li a .fas{
     width: 25px!important;
