@@ -19,9 +19,6 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    //    public User saveUser(User user){
-//        return userRepository.save(user);
-//    }
     public void saveUser(User user) {
         if (
                 userRepository.findByEmail(user.getEmail()).isEmpty()
@@ -43,13 +40,14 @@ public class UserService {
                 .map(user -> {
                     user.setUsername(newUser.getUsername());
                     user.setEmail(newUser.getEmail());
-                    user.setPassword(ApplicationSecurityConfig.passwordEncoder().encode(newUser.getPassword()));
+                    if (newUser.getPassword() != null) {
+                        user.setPassword(ApplicationSecurityConfig.passwordEncoder().encode(newUser.getPassword()));
+                    }
                     if (newUser.getRole() == null) {
                         user.setRole("ROLE_USER");
                     } else {
                         user.setRole(newUser.getRole());
                     }
-
                     return userRepository.save(user);
                 })
                 .orElseGet(() -> {
