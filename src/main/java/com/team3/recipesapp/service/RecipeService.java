@@ -52,7 +52,7 @@ public class RecipeService {
     public void saveRecipe(MultipartFile imageFile,String title, String ingredients,String description,String instructions,String tags) throws IOException {
         byte[] bytes = imageFile.getBytes();
 
-        Recipe newRecipe = new Recipe(title,ingredients,description,instructions,tags,bytes);
+        Recipe newRecipe = new Recipe(title,description,instructions,ingredients,tags,bytes);
         recipeRepository.save(newRecipe);
     }
 
