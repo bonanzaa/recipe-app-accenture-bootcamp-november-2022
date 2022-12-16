@@ -17,7 +17,7 @@ You can download the project to your device at this link: https://github.com/bon
 
 To run the project, open the project with the IDE of your choice (IntelliJ IDEA is recommended).
 
-To start the application, you can open the main class of the application `src/main/java/com/team3/recipesapp/RecipesAppApplication.java` and run the main method. The application will run on http://localhost:9191
+To start the application, you can open the main class of the application `src/main/java/com/team3/recipesapp/RecipesAppApplication.java` and run the main method. Alternatively, you can run the following command in the terminal: `./mvnw spring-boot:run` The application will run on http://localhost:9191
 
 NB: Since we're using a cloud database, your IP address must be whitelisted by our team in order to run the application.
 
